@@ -6,8 +6,6 @@ public class HotelReservas {
 
     public static void main(String[] args) {
 
-        System.out.println("uuuuuu");
-
         MetodosReserva metodo = new MetodosReserva();
         int opcion;
         do {
