@@ -17,9 +17,8 @@ public class MetodosReserva {
         int[] estadia = new int[6];
         String menuServicios[] = {" SPA ", " MASAJES ", " PISCINA ", " PASEOS ACUATICOS "};
         for (int i = 0; i < servicios.length; i++) {
-                servicios[i] = JOptionPane.showConfirmDialog(null, " QUIERE AGREGAR SERVICIOS " + menuServicios[i] + "?") == JOptionPane.YES_OPTION;
-           
-            
+            servicios[i] = JOptionPane.showConfirmDialog(null, " QUIERE AGREGAR SERVICIOS " + menuServicios[i] + "?") == JOptionPane.YES_OPTION;
+
         }
         for (int i = 0; i < estadia.length; i++) {
             String diaMesAnio = "", entradaSalida = "";
@@ -79,20 +78,20 @@ public class MetodosReserva {
             JOptionPane.showMessageDialog(null, "NO SE ENCONTRO LA RESERVA ");
 
         }
-        public void eliminarReserva(){
-            
-            int[]estadia ={0,0,0,0,0,0};
-            boolean[]servicios={false,false,false,false};
-            Reserva reserva= new Reserva("","",0,estadia,servicios);
-            int id = Integer.parseInt(JOptionPane.showInputDialog(null," INGRESE EL ID DE LA RESERVA "," ELIMINAR RESERVA"));
-            int posicionReserva=0;
-            while(listaReservas[posicionReserva].getId()!=id){
-                posicionReserva++;
-            }
-            reserva=listaReservas[posicionReserva];
-            listaReservas[posicionReserva]=null;
-            JOptionPane.showMessageDialog(null," RESERVA ELIMINADA CON EXITO "  );
-        }
     }
 
+    public void eliminarReserva() {
 
+        int[] estadia = {0, 0, 0, 0, 0, 0};
+        boolean[] servicios = {false, false, false, false};
+        Reserva reserva = new Reserva("", "", 0, estadia, servicios);
+        int id = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE EL ID DE LA RESERVA ", " ELIMINAR RESERVA"));
+        int posicionReserva = 0;
+        while (listaReservas[posicionReserva].getId() != id) {
+            posicionReserva++;
+        }
+        reserva = listaReservas[posicionReserva];
+        listaReservas[posicionReserva] = null;
+        JOptionPane.showMessageDialog(null, " RESERVA ELIMINADA CON EXITO ");
+    }
+}
