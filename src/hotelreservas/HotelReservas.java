@@ -5,10 +5,9 @@ import javax.swing.JOptionPane;
 public class HotelReservas {
 
     public static void main(String[] args) {
-        System.out.println("hhhhh olaaaaaaa");
-        
+
         System.out.println("uuuuuu");
-        
+
         MetodosReserva metodo = new MetodosReserva();
         int opcion;
         do {
@@ -21,10 +20,10 @@ public class HotelReservas {
                     5- SALIR
                     SELECCIONE UNA OPCION
                      """;
-           // opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
-           String[] opciones = {"CREAR", "CONSULTAR", "MODIFICAR", "ELIMINAR", "SALIR"};
-        opcion = JOptionPane.showOptionDialog(null, "SELECCIONE UNA OPCION", "GESTION DE RESERVAS DE HOTEL MENAGE", JOptionPane.DEFAULT_OPTION, 3, null, opciones, opciones[0]);
-        
+            // opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
+            String[] opciones = {"CREAR", "CONSULTAR", "MODIFICAR", "ELIMINAR", "SALIR"};
+            opcion = JOptionPane.showOptionDialog(null, "SELECCIONE UNA OPCION", "GESTION DE RESERVAS DE HOTEL MENAGE", JOptionPane.DEFAULT_OPTION, 3, null, opciones, opciones[0]);
+
             switch (opcion) {
                 case 0:
                     metodo.crearReserva();
@@ -40,8 +39,7 @@ public class HotelReservas {
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null, " Gracias por usar el servicio.\n nos vemos en la proxima reserva");
-               
-                    
+
             }
         } while (opcion != 4);
     }

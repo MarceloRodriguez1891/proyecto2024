@@ -14,7 +14,7 @@ public class Reserva {
         this.nombreCliente = nombreCliente;
         this.tipoHabitacion = tipoHabitacion;
         this.id = id;
-        this.diasEstadia = diasEstadia;
+        this.diasEstadia = diasEstadia(estadia);
         this.precioEstadia = precioEstadia;
         this.estadia = estadia;
         this.servicios = servicios;
