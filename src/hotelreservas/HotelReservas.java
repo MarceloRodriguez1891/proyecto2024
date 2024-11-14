@@ -5,6 +5,7 @@ import javax.swing.JOptionPane;
 public class HotelReservas {
 
     public static void main(String[] args) {
+        System.out.println("");
         
         MetodosReserva metodo = new MetodosReserva();
         int opcion;
