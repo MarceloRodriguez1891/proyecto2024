@@ -15,7 +15,7 @@ public class Reserva {
         this.tipoHabitacion = tipoHabitacion;
         this.id = id;
         this.diasEstadia = diasEstadia(estadia);
-        this.precioEstadia = precioEstadia;
+        this.precioEstadia = precioEstadia(tipoHabitacion, servicios, diasEstadia);
         this.estadia = estadia;
         this.servicios = servicios;
     }
@@ -56,5 +56,27 @@ public class Reserva {
     diasEstadia =((anioSalida-anioEntrada)*365)+((mesSalida-mesEntrada)*30)+(diaSalida-diaEntrada);
     return diasEstadia;
     }
-    
+    public double precioEstadia(String tipoHabitacion, boolean[] servicios, int diasEstadia){
+        double precioEstadia, precioBase = 0, precioServicios = 0, precioSimple = 500, precioDoble = 800, precioSuite = 1500;
+        double [] precioSegunServicio = {80, 25, 15, 100};
+        switch (tipoHabitacion.toLowerCase()){
+            case "simple":
+                precioBase = precioSimple;
+                break;
+            case "doble":
+                precioBase = precioDoble;
+                break;
+            case "suite":
+                precioBase = precioSuite;
+                break;
+                
+        }
+        for(int i=0;i < servicios.length;i++){
+            if(servicios[i]){
+                precioServicios += precioSegunServicio[i];
+            }
+        }
+        precioEstadia = (precioBase + precioServicios) * diasEstadia;
+        return precioEstadia;
+    }
 }
