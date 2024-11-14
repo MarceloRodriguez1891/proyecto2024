@@ -36,7 +36,7 @@ public class HotelReservas {
                     metodo.eliminarReserva();
                     break;
                 case 4:
-                    JOptionPane.showMessageDialog(null, " Gracias por usar el servicio.\n nos vemos en la proxima reserva");
+                    JOptionPane.showMessageDialog(null, " GRACIAS POR UTILIZAR EL SERVICIO.\n HASTA LA PRÓXIMA RESERVA ");
 
             }
         } while (opcion != 4);

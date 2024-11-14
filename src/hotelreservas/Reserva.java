@@ -10,7 +10,7 @@ public class Reserva {
     boolean []servicios;
     // constructor
 
-    public Reserva(String nombreCliente, String tipoHabitacion, int id,   int[] estadia, boolean[] servicios) {
+    public Reserva(String nombreCliente, String tipoHabitacion, int id, double precioEstadia,   int[] estadia, boolean[] servicios) {
         this.nombreCliente = nombreCliente;
         this.tipoHabitacion = tipoHabitacion;
         this.id = id;
