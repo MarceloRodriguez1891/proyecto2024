@@ -73,7 +73,7 @@ public class MetodosReserva {
         }
         reserva = listaReservas[posicionReserva];
         if (reserva != null) {
-            JOptionPane.showMessageDialog(null, "DETALLES DE LA RESERVA \n NOMBRE : " + reserva.getNombreCliente() + "\n " + "" + reserva.getDiasEstadia() + "\n DE ESTADIA ");
+            JOptionPane.showMessageDialog(null, "DETALLES DE LA RESERVA \n NOMBRE : " + reserva.getNombreCliente() + "\n " + "" + reserva.getDiasEstadia() + "\n DE ESTADIA \n"+reserva.getPrecioEstadia());
         } else {
             JOptionPane.showMessageDialog(null, "NO SE ENCONTRO LA RESERVA ");
 

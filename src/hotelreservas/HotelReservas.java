@@ -33,7 +33,7 @@ public class HotelReservas {
                     //metodo.modificarReserva();
                     break;
                 case 3:
-                    //metodo.eliminarReserva();
+                    metodo.eliminarReserva();
                     break;
                 case 4:
                     JOptionPane.showMessageDialog(null, " Gracias por usar el servicio.\n nos vemos en la proxima reserva");
