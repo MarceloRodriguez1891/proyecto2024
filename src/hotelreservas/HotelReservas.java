@@ -5,7 +5,7 @@ import javax.swing.JOptionPane;
 public class HotelReservas {
 
     public static void main(String[] args) {
-        System.out.println("hhhhh ");
+        System.out.println("hhhhh olaaaaaaa");
         
         System.out.println("uuuuuu");
         
