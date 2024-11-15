@@ -29,13 +29,13 @@ public class HotelReservas {
                     metodo.consultarReserva();
                     break;
                 case 2:
-      //            metodo.modificarReserva();
+                    metodo.modificarReserva();
                     break;
                 case 3:
                     metodo.eliminarReserva();
                     break;
                 case 4:
-                    JOptionPane.showMessageDialog(null, " GRACIAS POR UTILIZAR EL SERVICIO.\n HASTA LA PRÓXIMA RESERVA "," RESERVAS MENAGE ", 2);
+                    JOptionPane.showMessageDialog(null, " GRACIAS POR UTILIZAR EL SERVICIO.\n HASTA LA PRÓXIMA RESERVA ", " RESERVAS MENAGE ", 2);
 
             }
         } while (opcion != 4);
