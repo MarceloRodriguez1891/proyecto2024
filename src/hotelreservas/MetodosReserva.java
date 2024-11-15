@@ -15,9 +15,10 @@ public class MetodosReserva {
         String tipoHabitacion = habitaciones[habitacionInt];
         boolean[] servicios = new boolean[4];
         int[] estadia = new int[6];
-        String menuServicios[] = {"  SPA!!!\n "+ " U$S 80 ", "     MASAJES!!!\n " + " U$S 25", " PISCINA CLIMATIZADA!!!\n "+" U$S 15", " PASEOS ACUATICOS !!!\n"+" U$S 100"};
+        String menuServicios[] = {"  SPA!!!\n "+ " U$S ", "     MASAJES!!!\n " + " U$S ", " PISCINA CLIMATIZADA!!!\n "+" U$S ", " PASEOS ACUATICOS !!!\n"+" U$S "};
+        double [] precioSegunServicio = {80, 25, 15, 100};
         for (int i = 0; i < servicios.length; i++) {
-            int yesNoInt = JOptionPane.showOptionDialog(null, menuServicios[i], " EXTRAS DISPONIBLES ", JOptionPane.DEFAULT_OPTION, 3, null, yesNo, yesNo[0]);
+            int yesNoInt = JOptionPane.showOptionDialog(null, menuServicios[i] + precioSegunServicio[i] , " EXTRAS DISPONIBLES ", JOptionPane.DEFAULT_OPTION, 3, null, yesNo, yesNo[0]);
             if(yesNoInt == 0){
             servicios[i] = true;
             }
@@ -53,7 +54,7 @@ public class MetodosReserva {
             }
             estadia[i] = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE " + diaMesAnio + " DE " + entradaSalida, "ESTADIA MENAGE", 1));
         }
-        Reserva reserva = new Reserva(nombreCliente, tipoHabitacion, id, estadia, servicios);
+        Reserva reserva = new Reserva(nombreCliente, tipoHabitacion, id, estadia, servicios,precioSegunServicio);
         int posicion = 0;
         while (listaReservas[posicion] != null) {
             posicion++;
@@ -66,7 +67,7 @@ public class MetodosReserva {
     public void consultarReserva() {
         int[] estadia = {0, 0, 0, 0, 0, 0};
         boolean[] servicios = {false, false, false, false};
-        Reserva reserva = new Reserva("", "", 0, estadia, servicios);
+        Reserva reserva = new Reserva("", "", 0, estadia, servicios,precioSegunServicio);
         int id = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE EL ID DE LA RESERVA A CONSULTAR ", "REQUIERE ID", 3));
         int posicionReserva = 0;
         while (listaReservas[posicionReserva] != null && listaReservas[posicionReserva].getId() != id) {
@@ -87,7 +88,7 @@ public class MetodosReserva {
 
         int[] estadia = {0, 0, 0, 0, 0, 0};
         boolean[] servicios = {false, false, false, false};
-        Reserva reserva = new Reserva("", "", 0, estadia, servicios);
+        Reserva reserva = new Reserva("", "", 0, estadia, servicios,precioSegunServicio);
         int id = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE EL ID DE LA RESERVA ", " ELIMINAR RESERVA", 1));
         int posicionReserva = 0;
         while (listaReservas[posicionReserva].getId() != id) {

@@ -10,12 +10,12 @@ public class Reserva {
     boolean []servicios;
     // constructor
 
-    public Reserva(String nombreCliente, String tipoHabitacion, int id,   int[] estadia, boolean[] servicios) {
+    public Reserva(String nombreCliente, String tipoHabitacion, int id,   int[] estadia, boolean[] servicios,double[] precioSegunServicio) {
         this.nombreCliente = nombreCliente;
         this.tipoHabitacion = tipoHabitacion;
         this.id = id;
         this.diasEstadia = diasEstadia(estadia);
-        this.precioEstadia = precioEstadia(tipoHabitacion, servicios, diasEstadia);
+        this.precioEstadia = precioEstadia(tipoHabitacion, servicios,precioSegunServicio, diasEstadia);
         this.estadia = estadia;
         this.servicios = servicios;
     }
@@ -56,9 +56,8 @@ public class Reserva {
     diasEstadia =((anioSalida-anioEntrada)*365)+((mesSalida-mesEntrada)*30)+(diaSalida-diaEntrada);
     return diasEstadia;
     }
-    public double precioEstadia(String tipoHabitacion, boolean[] servicios, int diasEstadia){
+    public double precioEstadia(String tipoHabitacion, boolean[] servicios,double[] precioSegunServicio, int diasEstadia){
         double precioEstadia, precioBase = 0, precioServicios = 0, precioSimple = 500, precioDoble = 800, precioSuite = 1500;
-        double [] precioSegunServicio = {80, 25, 15, 100};
         switch (tipoHabitacion.toLowerCase()){
             case "simple":
                 precioBase = precioSimple;
