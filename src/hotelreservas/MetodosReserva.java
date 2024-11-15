@@ -77,7 +77,7 @@ public class MetodosReserva {
         reserva = listaReservas[posicionReserva];
         if (reserva != null) {
             JOptionPane.showMessageDialog(null, reserva.getNombreCliente() + "\n " + "" + reserva.getDiasEstadia()
-                    + "  DE ESTADIA \n" + reserva.getPrecioEstadia(), "DETALLES DE LA RESERVA \n NOMBRE : ", 1);
+                    + " DIAS DE ESTADIA \n" +" U$S "+ reserva.getPrecioEstadia(), "DETALLES DE LA RESERVA \n NOMBRE : ", 1);
         } else {
             JOptionPane.showMessageDialog(null, "NO SE ENCONTRO LA RESERVA ", "HOTEL MENAGE", 1);
 
