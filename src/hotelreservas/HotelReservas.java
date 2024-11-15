@@ -1,5 +1,6 @@
 package hotelreservas;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class HotelReservas {
@@ -7,6 +8,7 @@ public class HotelReservas {
     public static void main(String[] args) {
 
         MetodosReserva metodo = new MetodosReserva();
+           ImageIcon iconoHotel = new ImageIcon(MetodosReserva.class.getResource("/fotosHotel/hotel.png"));
         int opcion;
         do {
             String menu = """
@@ -19,7 +21,10 @@ public class HotelReservas {
                     SELECCIONE UNA OPCION
                      """;
             String[] opciones = {"CREAR", "CONSULTAR", "MODIFICAR", "ELIMINAR", "SALIR"};
-            opcion = JOptionPane.showOptionDialog(null, "SELECCIONE UNA OPCION", "GESTION DE RESERVAS DE HOTEL MENAGE", JOptionPane.DEFAULT_OPTION, 3, null, opciones, opciones[0]);
+            opcion = JOptionPane.showOptionDialog(null, "SELECCIONE UNA OPCION", "GESTION DE RESERVAS DE HOTEL MENAGE",
+                    JOptionPane.DEFAULT_OPTION,JOptionPane.QUESTION_MESSAGE,
+                    iconoHotel,
+                    opciones, opciones[0]);
 
             switch (opcion) {
                 case 0:

@@ -1,5 +1,6 @@
 package hotelreservas;
 
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
 public class MetodosReserva {
@@ -11,9 +12,17 @@ public class MetodosReserva {
     double[] precioSegunServicio = {80, 25, 15, 100};
 
     public void crearReserva() {
-        String nombreCliente = JOptionPane.showInputDialog(null, "INGRESE NOMBRE COMPLETO DEL CLIENTE ", " DATOS CLIENTE", 2);
-        int id = Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE EL ID (DOCUMENTO) DEL CLIENTE ", "DATOS CLIENTE", 2));
-        int habitacionInt = JOptionPane.showOptionDialog(null, "QUE HABITACION PREFIERE", "ELEGIR HABITACION", JOptionPane.DEFAULT_OPTION, 3, null, habitaciones, habitaciones[0]);
+           ImageIcon iconoNombre = new ImageIcon(MetodosReserva.class.getResource("/fotosHotel/nombre.png"));
+         ImageIcon iconoHabitacion = new ImageIcon(MetodosReserva.class.getResource("/fotosHotel/hotel.png"));
+    ImageIcon iconoIdentificacion = new ImageIcon(MetodosReserva.class.getResource("/fotosHotel/identificacion.png"));
+        String nombreCliente = (String) JOptionPane.showInputDialog(null, "INGRESE NOMBRE COMPLETO DEL CLIENTE ",
+                " DATOS CLIENTE",JOptionPane.QUESTION_MESSAGE,
+                iconoNombre,null,null);
+        int id = Integer.parseInt(JOptionPane.showInputDialog(null, "INGRESE EL ID (DOCUMENTO) DEL CLIENTE ",
+                "DATOS CLIENTE",JOptionPane.QUESTION_MESSAGE ));
+        int habitacionInt = JOptionPane.showOptionDialog(null, "QUE HABITACION PREFIERE", "ELEGIR HABITACION",
+                JOptionPane.DEFAULT_OPTION, JOptionPane.QUESTION_MESSAGE,
+                iconoHabitacion,  habitaciones, habitaciones[0]);
         String tipoHabitacion = habitaciones[habitacionInt];
         boolean[] servicios = new boolean[4];
         int[] estadia = new int[6];
