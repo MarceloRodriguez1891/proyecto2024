@@ -7,15 +7,15 @@ public class MetodosReserva {
     Reserva[] listaReservas = new Reserva[10];
 
     public void crearReserva() {
-        String nombreCliente = JOptionPane.showInputDialog("INGRESE NOMBRE COMPLETO DEL CLIENTE ");
-        int id = Integer.parseInt(JOptionPane.showInputDialog("INGRESE EL ID (DOCUMENTO) DEL CLIENTE "));
+        String nombreCliente = JOptionPane.showInputDialog(null,"INGRESE NOMBRE COMPLETO DEL CLIENTE "," DATOS CLIENTE",2);
+        int id = Integer.parseInt(JOptionPane.showInputDialog(null,"INGRESE EL ID (DOCUMENTO) DEL CLIENTE ","DATOS CLIENTE",2));
         String[] yesNo = {"SÍ","NO"};
         String[] habitaciones = {"SIMPLE", "DOBLE", "SUITE"};
         int habitacionInt = JOptionPane.showOptionDialog(null, "QUE HABITACION PREFIERE", "ELEGIR HABITACION", JOptionPane.DEFAULT_OPTION, 3, null, habitaciones, habitaciones[0]);
         String tipoHabitacion = habitaciones[habitacionInt];
         boolean[] servicios = new boolean[4];
         int[] estadia = new int[6];
-        String menuServicios[] = {"     SPA!!! ", "     MASAJES!!! ", " PISCINA CLIMATIZADA!!! ", " PASEOS ACUATICOS !!!"};
+        String menuServicios[] = {"  SPA!!!\n "+ " U$S 80 ", "     MASAJES!!!\n " + " U$S 25", " PISCINA CLIMATIZADA!!!\n "+" U$S 15", " PASEOS ACUATICOS !!!\n"+" U$S 100"};
         for (int i = 0; i < servicios.length; i++) {
             int yesNoInt = JOptionPane.showOptionDialog(null, menuServicios[i], " EXTRAS DISPONIBLES ", JOptionPane.DEFAULT_OPTION, 3, null, yesNo, yesNo[0]);
             if(yesNoInt == 0){
@@ -98,4 +98,7 @@ public class MetodosReserva {
         JOptionPane.showMessageDialog(null, " RESERVA ELIMINADA CON EXITO ", "HOTEL MENAGE", 2);
     }
 
-}
+  
+    }
+
+
