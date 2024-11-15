@@ -18,7 +18,6 @@ public class HotelReservas {
                     5- SALIR
                     SELECCIONE UNA OPCION
                      """;
-            // opcion = Integer.parseInt(JOptionPane.showInputDialog(menu));
             String[] opciones = {"CREAR", "CONSULTAR", "MODIFICAR", "ELIMINAR", "SALIR"};
             opcion = JOptionPane.showOptionDialog(null, "SELECCIONE UNA OPCION", "GESTION DE RESERVAS DE HOTEL MENAGE", JOptionPane.DEFAULT_OPTION, 3, null, opciones, opciones[0]);
 

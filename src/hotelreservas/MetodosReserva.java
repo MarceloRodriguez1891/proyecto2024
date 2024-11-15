@@ -6,7 +6,7 @@ public class MetodosReserva {
 
     Reserva[] listaReservas = new Reserva[10];
 
-    public void crearReserva(double precioEstadia) {
+    public void crearReserva() {
         String nombreCliente = JOptionPane.showInputDialog("INGRESE NOMBRE COMPLETO DEL CLIENTE ");
         int id = Integer.parseInt(JOptionPane.showInputDialog("INGRESE EL ID (DOCUMENTO) DEL CLIENTE "));
        
@@ -51,7 +51,7 @@ public class MetodosReserva {
             }
             estadia[i] = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE " + diaMesAnio + " DE " + entradaSalida, "ESTADIA MENAGE", 1));
         }
-        Reserva reserva = new Reserva(nombreCliente, tipoHabitacion, id, precioEstadia, estadia, servicios);
+        Reserva reserva = new Reserva(nombreCliente, tipoHabitacion, id, estadia, servicios);
         int posicion = 0;
         while (listaReservas[posicion] != null) {
             posicion++;
@@ -64,7 +64,7 @@ public class MetodosReserva {
     public void consultarReserva() {
         int[] estadia = {0, 0, 0, 0, 0, 0};
         boolean[] servicios = {false, false, false, false};
-        Reserva reserva = new Reserva("", "", 0, 0.0, estadia, servicios);
+        Reserva reserva = new Reserva("", "", 0, estadia, servicios);
         int id = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE EL ID DE LA RESERVA A CONSULTAR ", "REQUIERE ID", 3));
         int posicionReserva = 0;
         while (listaReservas[posicionReserva] != null && listaReservas[posicionReserva].getId() != id) {
@@ -85,7 +85,7 @@ public class MetodosReserva {
 
         int[] estadia = {0, 0, 0, 0, 0, 0};
         boolean[] servicios = {false, false, false, false};
-        Reserva reserva = new Reserva("", "", 0, 0.0, estadia, servicios);
+        Reserva reserva = new Reserva("", "", 0, estadia, servicios);
         int id = Integer.parseInt(JOptionPane.showInputDialog(null, " INGRESE EL ID DE LA RESERVA ", " ELIMINAR RESERVA", 1));
         int posicionReserva = 0;
         while (listaReservas[posicionReserva].getId() != id) {
@@ -96,7 +96,4 @@ public class MetodosReserva {
         JOptionPane.showMessageDialog(null, " RESERVA ELIMINADA CON EXITO ", "HOTEL MENAGE", 2);
     }
 
-    void crearReserva() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
 }
