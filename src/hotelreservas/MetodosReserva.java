@@ -9,7 +9,7 @@ public class MetodosReserva {
     public void crearReserva() {
         String nombreCliente = JOptionPane.showInputDialog("INGRESE NOMBRE COMPLETO DEL CLIENTE ");
         int id = Integer.parseInt(JOptionPane.showInputDialog("INGRESE EL ID (DOCUMENTO) DEL CLIENTE "));
-       
+        String[] yesNo = {"SÍ","NO"};
         String[] habitaciones = {"SIMPLE", "DOBLE", "SUITE"};
         int habitacionInt = JOptionPane.showOptionDialog(null, "QUE HABITACION PREFIERE", "ELEGIR HABITACION", JOptionPane.DEFAULT_OPTION, 3, null, habitaciones, habitaciones[0]);
         String tipoHabitacion = habitaciones[habitacionInt];
@@ -17,8 +17,10 @@ public class MetodosReserva {
         int[] estadia = new int[6];
         String menuServicios[] = {"     SPA!!! ", "     MASAJES!!! ", " PISCINA CLIMATIZADA!!! ", " PASEOS ACUATICOS !!!"};
         for (int i = 0; i < servicios.length; i++) {
-            servicios[i] = JOptionPane.showConfirmDialog(null, menuServicios[i], " EXTRAS DISPONIBLES ", 0) == JOptionPane.DEFAULT_OPTION;
-
+            int yesNoInt = JOptionPane.showOptionDialog(null, menuServicios[i], " EXTRAS DISPONIBLES ", JOptionPane.DEFAULT_OPTION, 3, null, yesNo, yesNo[0]);
+            if(yesNoInt == 0){
+            servicios[i] = true;
+            }
         }
         for (int i = 0; i < estadia.length; i++) {
             String diaMesAnio = "", entradaSalida = "";
